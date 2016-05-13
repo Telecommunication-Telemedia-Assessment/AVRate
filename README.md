@@ -7,9 +7,8 @@ Before the actual use, configuration has to be done in three parts, a main XML c
 
 # Acknowledgment
 
-
 The work done in the development of this software has been carried out thanks to the funding of Deutsche Telekom AG. 
-This development was performed in the context of the development of audiovisual quality models performed at the Technical University of Berlin in the group Assessment of IP-based Application.  
+This development was performed in the context of the development of audiovisual quality models performed at the Technical University of Berlin in the group Assessment of IP-based Application (AIPA). It is now supported by the Technical University of Ilmenau, at the group Audio Visual Technology (AVT).
 
 
 # License
