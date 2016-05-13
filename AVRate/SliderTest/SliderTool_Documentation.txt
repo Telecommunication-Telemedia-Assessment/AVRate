@@ -1,0 +1,87 @@
+SliderTool
+----------
+
+SliderTool is a program which allows people to view video and listen to audio data and then rate the seen content by different means of software and hardware inputs. Software inputs can be sliders, which position can be changed with the mouse or buttons which can be clicked. Hardware input is an external slider attached over USB.
+
+Before the actual use, configuration has to be done in three parts, a main XML configuration file, a playlist containing the data that is to be played and some settings right before the test regarding the test subjects.
+
+When using the hardware slider at a local display, the player should be mplayer.
+
+Constinuous vs. end rating
+-----------------------
+
+Continuous rating takes one sample per sampling interval (specified in the settings file) and adds it to a list of values, which gets logged completely. The first value will be logged when the player/server is done with the preparation (see ContentServer::PreparePlay()), but the timer for the sampling is started earlier. If the time the server needs for preparations differs, it can lead to different amounts of samples in the end (even though it should be one sample difference at the most).
+
+The sampling interval itself is very accurate, 100Hz should pose no problems computation-wise.
+
+End rating takes a single rating after the file has been played and logs that rating, possibly coming from more than one rating input (several slider etc.).
+
+Video server
+------------
+
+For the video server, there was a delay of 1.1 seconds after the command to start the playback was sent. This information has to be kept in mind when assigning sample values to their respective times on the video.
+
+XML settings file
+-----------------
+	- Distinction between using a software form to input the rating or a hardware tool (external slider device)
+	- In case of software form input there are settings to control the visual display of the forms
+	- Methods of rating
+	- The source of the data being played
+	- Several settings only apply to certain test setups, they are ignored otherwise
+	
+	
+Playlist
+--------
+		
+Playlist
+	- Consists of one item per line
+	- Playable items (video/audio files)
+	- Special items
+	
+The playlist must contain elements following the media and display setting in the settings file. 
+
+Audio/*
+<WAV filename>
+
+Video/{Local|Remote}
+<Video filename>
+
+Video/Server
+<Name> <Start point> <Number of frames> <FPS>
+
+
+Special items like pop-up boxes starting with ":" are available, not all are useful in conjunction with every media/display combination.
+
+Pop-ups (not useful in conjunction with video server/slider rating)
+
+:TS 	indicate the start of the training phase
+
+:TE 	indicate the end of the training phase
+
+:PP 	pause
+
+:PE	end of the playlist
+
+:CC	pop-up with own text
+
+
+Special items for the video server
+
+:Frame <frame> 		
+		show a certain frame on the VS (e.g. "Pause")
+
+:WaitFrame <frame> <time> 
+	like :Frame, but also present a popup and wait for the supervisor to click OK. Then wait another <time> seconds, then play the next item.
+	Useful together with hardware sliders and more than one user, when items should be played automatically and not by someone pushing a button.
+
+It is also possible to have several files be played consecutively and then have a final rating for these files. For that purpose, all the files meant to be played consecutively are placed after each other on a single line. For elements needing more than one string (like Video/Server), the sets of strings are placed after each other.
+	
+		
+Internals
+---------
+
+The program first reads in the XML settings file (FormSettings.h). From there it makes most decisions about which form to use for the ratings. There are forms discerned by the form of rating (continuous vs. rating at the end of a file) and by the input (software vs. hardware). This differentiation was made because the control flow is different enough for each case to not have all of these things in a single form. There are forms for special purposes like P800 scale or on-screen rating (i.e. rating by clicking directly onto the movie).
+
+General settings are initialized too in this stage and are passed to the chosen form, which is initialized next.
+
+The instance between the form (view) and the data (model) is a controller, which controls the logging and the data to be played. This controller is initialized in each form as well as the visible inputs like software sliders as set in the settings file. After initialization the main loop is entered which will play an item, then wait for the user to input his rating and then play the next item.

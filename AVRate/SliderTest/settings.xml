@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<!--  Example AVrate Settings File 
+ 
+rating = {continuous, end, sync}
+	continuous: only the first slider is being used (also if device = software)
+	end: rating after playback
+	sync: rating after playback with keypress logging
+
+ratingmethod = {standard, constant, staircase, double}
+	the method used to proceed to next playlist items throughout the test
+	Standard = play files in the order of the playlist
+	Staircase = Adaptive staircase method 
+	Double = Double staircase method
+	PEST = Parameter Estimation by Sequential Testing (not included yet)
+	QUEST = (not included yet)
+	Note that special Playlist items are allowed only for Standard method.
+
+ratingmethodrule = {valuestring}
+	evaluation rule parameter for ratingmethod
+	for Standard method : no parameter needed
+	for Constant method : no parameter needed
+	for Staircase and Double method : eg. UUD for 2up-1down rule or UD for 1up-1down
+
+ratingmethodbreakcount = {valuestring}
+	break criterion parameter for ratingmethod
+	for Standard method : no parameter needed
+	for Constant method : Specifies the number of trials to execute before break
+	for Staircase method : Specifies the number of answer reversals until break
+	for Double method : Specifies the number of answer reversals until break
+
+device = {software, hardware, tablet}
+	hardware: no pretty output to screen, layout is ignored. from the first slider, min and	max value are being used
+	tablet: AVRate will be controlled remotely from the iOSAVRate mobile application
+
+layout = {horizontal, vertical, p800, onscreen}
+	layout orientation of slider/buttons
+	p800: device is ignored, also the sliders below, rating always "end"
+	onscreen: onscreen video rating, needs two sliders (for the horizontal and vertical scale), only sensible with local video
+
+media = {audio, video}
+	currently not used. Audio playback is handled by Windows Media Player (internally as ActiveX Control)
+
+display = {local, remote, server}
+	local: play the files on the same computer as the tool is running on
+	remote and server: need to specify remotehost
+	Remote VLC should be started like this:
+	“vlc %extraintf=rc %rc-host="0.0.0.0:12345" %qt-display-mode=2 %rc-quiet %no-video-title-show”
+	(note: replace all % with a double minus! XML doesnt allow to write a double minus here in the comments)
+
+playondevice = {true, false}
+	if device is set to tablet, it is possible to playback the video on the tablet by setting this option to true. Otherwise, iOSAVrate will be a deported screen for the AVRate rating interface. 
+
+sleeptime = {value}
+	introduces a fixed delay in milliseconds before sending the actual play command to prevent cutting off of playback.
+	Default and recommended values are 0 for local playback, 1500 for remote and 2000 for server playback.
+	Do not specify this entry for default values.
+
+remotehost = {<ip:port>}
+
+repeat = {true, false}
+	possibility to repeat a playlist item (how should it be done for hardware slider rating?)
+
+localplayer = {wmp, mplayer, vlc09, vlc10, command_line}
+	Available video players:
+	Windows Media Player (as ActiveX Control)
+	VLC Player V0.9.8a
+	VLC Player V1.0.0RC1
+	MPlayer V1.0rc2
+	Run an arbitrary command line
+
+playerpath = complete path to the executable of localplayer
+
+playerarguments = the arguments to pass to the player in case the selected local player is "command_line". In the arguments, %1 is a placeholder for the file to play according to the playlist.
+
+volumeform = { none, slider, button }
+	allow changing the volume during the training phase of an audio test
+	
+userlanguage = { en, de }
+	Language for test person
+
+systemlanguage = { en, de }
+	Language for supervisor
+
+logging = { file, database }
+	for every needed logging mechanism, add one logging entry (if you want no logging, don't add any)
+	
+waittime = <float>
+	Time in secs to wait between items, when there is more than 1 user and hardware sliders are being used
+	
+samplinginterval = <int>
+	Interval between two sampling points for continuous rating (in ms) -> sampling frequency = 1 / samplinginterval
+
+Slider settings:
+name: Name for the surrounding box, for no name, set it empty
+label: one entry for each label, labels will be evenly distributed along the slider
+min, max: lowest and highest value the slider will return
+ticks: number of evenly disteributed ticks (little marks) besides the slider
+fixed: determines if only the values at each tick can be chosen (set to true) or continuous values (set to false)
+shownumbers: if true, a number will be shown besides each tick 
+		with the corresponding numerical value of the slider at that position
+
+Button settings:
+name: Name for the surrounding box, for no name, set it empty
+label: one entry for each labelled button, the first one has a ‘0’ or ‘NO’ answer meaning internally
+
+
+Callbacks:
+It is possible to call user defined function when the observer press the play button to play a video/register new scores. And once the video stop. 
+To do so, create a folder "Scripts" in the folder where AVRate.exe is located. In this folder it is possible to define two visual basic scripts: "PlaybackStart.vbs" and "PlaybackEnd.vbs". 
+The script "PlaybackStart.vbs" will be started every time the test participant click on the play button. to this script, as argment, the value of the scores will be sent. 
+The script "PlaybackEnd.vbs" will be called after then end of the video.
+
+-->
+
+
+<!-- START OF SETTINGS -->
+
+<root>
+<general>
+	<rating>end</rating>
+	<ratingmethod>standard</ratingmethod>
+	<ratingmethodrule>UUD</ratingmethodrule>
+	<ratingmethodbreakcount>4</ratingmethodbreakcount>
+	<device>software</device>
+	<layout>vertical</layout>
+	<media>video</media>
+	<display>local</display>
+	<sleeptime></sleeptime>
+	<repeat>false</repeat>
+	<volumeform>slider</volumeform>
+	<userlanguage>de</userlanguage>
+	<systemlanguage>en</systemlanguage>
+	<logging>file</logging>
+	<logging>database</logging>
+	<waittime>10</waittime>
+	<samplinginterval>1000</samplinginterval>
+	
+	
+	<remotehost>192.168.0.1:42219</remotehost>
+
+	<!--	
+	<localplayer>vlc</localplayer>
+	<playerpath>C:\Programme\VideoLAN\VLC</playerpath>	
+	-->
+
+	<!--
+	<localplayer>pcplayer</localplayer>
+	<playerpath>E:\Users\root\Documents\3DTV_SVN\Tools\PCPlayer\x64\Release\PCPlayer.exe</playerpath>
+	-->
+
+	<!--
+	<localplayer>mplayer</localplayer>
+	<playerpath>C:\Programme\MPlayer-1.0rc2\mplayer.exe</playerpath>
+	
+
+	<localplayer>wmp</localplayer>
+	<playerpath>doesntmatter</playerpath>
+	-->
+
+	<localplayer>command_line</localplayer>
+	<playerpath>C:\Program Files\VideoLAN\VLC\vlc.exe</playerpath>
+	<playerarguments> %1 -f </playerarguments>
+	
+
+</general>
+<!--
+<slider>
+	<name></name>
+	<label></label>
+	<label>schlecht</label>
+	<label></label>
+	<label>dürftig</label>
+	<label></label>
+	<label>ordentlich</label>
+	<label></label>	
+	<label>gut</label>	
+	<label></label>
+	<label>ausgezeichnet</label>
+	<label></label>
+	<min>0</min>
+	<max>10</max>
+	<ticks>11</ticks>
+	<fixed>false</fixed>
+	<shownumbers>true</shownumbers>
+</slider>
+-->
+<slider>
+	<name>slider2</name>
+	<label></label>
+	<label>lowest</label>
+	<label></label>
+	<label>low</label>
+	<label></label>
+	<label>medium</label>
+	<label></label>
+	<label>high</label>
+	<label></label>
+	<label>highest</label>
+	<label></label>
+	<min>0</min>
+	<max>10</max>
+	<ticks>11</ticks>
+	<fixed>true</fixed>
+	<shownumbers>true</shownumbers>
+</slider>
+
+
+<buttons>
+	<name>Acceptance</name>
+	<label>Yes</label>	
+	<label>No</label>
+</buttons>
+
+<!--
+<slider>
+	<name>slider1</name>
+	<label>verylonglabelname</label>
+	<label></label>
+	<label>label3</label>
+	<label></label>
+	<label></label>
+	<label>label4</label>
+	<min>0</min>
+	<max>100</max>
+	<ticks>11</ticks>
+	<shownumbers>false</shownumbers>
+</slider>
+ -->
+
+</root>

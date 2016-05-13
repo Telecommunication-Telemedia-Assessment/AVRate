@@ -1,0 +1,79 @@
+custom string ins playlistItemPlayable, das werte aus der xmldatei aufnehmen kann
+z.b.: für lokale videos angabe von dimension des videos (gilt dann für alle videos)
+und dann auswertung dieses Strings (bzw. eines string dictionaries) in der PlayItem()
+des items (um z.b. das VLC fenster an die richtige stelle zu setzen)
+
+-- XML file: factory, die ein dictionary von strings (parameter) und werten 
+bekommt, die vorher aus dem XML file geparst wurden.  für alle werte, die die
+factory braucht, werden erst defaults gesetzt, die danach überschrieben werden,
+wenn es einen wert in dem dicitonary für sie gibt
+
+-------------
+ 
+ 
+Fragen:
+
+ - OnVideo: Wie sollen die Skalen aussehen?
+
+
+-- Fix playing delay issue when sending on Displayforward command (priority 1)
+
+-- Adapt the remote hardware slider for the audio tests (nochmal testen!)
+
+-- mehrere Leute gleichzeitig an der software (dann so, dass keiner drücken muss,
+	bis das nächste item beginnt, sondern nach einem timeout das nächste item
+	gestartet wird)
+-- mehrere logfiles? scheint logisch
+
+-- logging-backends verallgemeinern 
+
+-- lautstärkeveränderung während der testphase adden, extra fenster, einmal mit 3 knöpfen 
+	(play (leise), play (normal), play (laut)) und einmal slider zur lautstärkeanpassung
+
+-- libsndfile einbinden zum auslesen der samplerate etc.
+
+-- VideoServer befehle umstellen
+
+Wartezeit bei mehreren usern gleichzeitig, Problem bei der pause etc., wann soll es weitergehen?
+	idee, im Controller ein proceed() unterzubringen, der true zurückgibt, wenn weitergemacht
+	werden soll/darf <-- versuchsleiter startet den test mit klicken auf dem computer (ebenso nach
+	der trainingsphase und der pause), dabei jeweils nach dem klick lange pause (20 sec oder so), damit
+	der leiter rausgehen kann (ausser beim start des tests, da bleibt er ja im raum bis zum ende
+	der trainigsphase)
+	So gelöst: Weiteres playlistItem (WaitFrame), das beim seinem Aufruf eine MsgBox zeigt, die 
+	vom Testleiter weggeklickt werden muss und dann noch 20 sec wartet (damit der Testleiter raus
+	gehen kann)
+
+wartezeit bei mehreren usern als parameter in die XML
+
+-- slider bzw. button in der settings.xml einstellen können für die volumeForm
+
+sql adden
+
+-- für den videoserver pausen machen, die ein standbild zeigen (oder so ähnlich)
+	ist drin mit "MessageFrame <frameNummer>", wobei frameNummer die Nummer des anzuzeigenden
+	Standbildes ist
+
+größe der videos in die playlist, wenn nicht alle gleich gross.  Ansonsten in der xml
+	absolut notwendig, die grösse zu kennen, auch bei mplayer, das sich selbst zentrieren kann,
+	um bei onscreen z.b. die skala korrekt zu setzen
+
+slider below video + onscreen rating
+
+-- in FormSoftwareEnd wird MouseEnable/Disable aufgerufen, das PlayNext() klammernd. Das disabled aber auch die maus, wenn ein PopUp kommt => vorher abfragen, ob das nächste Item ein AutoItem ist
+	
+-- Explizit ein Ende-Item verwenden, da sonst immer das Ende-PopUp auf dem Bildschirm kommt, was aber bei Slidernutzung nicht gewünscht sein könnte.
+
+Verzögerung nach displayforward: 1.1 sec
+
+video file size in playlist or if all the same into the settings file
+
+-- Hardware + local den screen neumachen
+
+-- rating frequenz in settings
+
+an mn, marcel und robert schicken
+
+-- uncheck all radiobuttons after rating
+
+-- bitte bewerten weiter runter

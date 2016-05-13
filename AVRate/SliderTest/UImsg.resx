@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERR_noConnect" xml:space="preserve">
+    <value>Could not connect to server
+</value>
+    <comment>Connection to a Remote or DVS server failed</comment>
+  </data>
+  <data name="ERR_unknownItem1" xml:space="preserve">
+    <value>Unknown item in the playlist</value>
+    <comment>Playlist file contains unknown items (part1)</comment>
+  </data>
+  <data name="ERR_unknownItem2" xml:space="preserve">
+    <value>, please fix it and start over!</value>
+    <comment>Playlist file contains unknown items (part2)</comment>
+  </data>
+  <data name="ERR_unknownServerItem" xml:space="preserve">
+    <value>Server entries must have 4 values</value>
+    <comment>Playlist file contains bad formatted server entries (Single Rating)</comment>
+  </data>
+  <data name="ERR_unknownServerItemMul" xml:space="preserve">
+    <value>Server entries must have 4 values or multiples of 4</value>
+    <comment>Playlist file contains bad formatted server entries (Several Rating)</comment>
+  </data>
+  <data name="FillTextbox" xml:space="preserve">
+    <value>Please fill out the text box</value>
+    <comment>Main window : settings or playlist file not specified</comment>
+  </data>
+  <data name="GRP_rate" xml:space="preserve">
+    <value>Please rate!</value>
+    <comment>Message to do the rating (Group Rating)</comment>
+  </data>
+  <data name="HW_playing" xml:space="preserve">
+    <value>Playing...</value>
+    <comment>Message while playing with Hardware Slider(disabled, no message is shown)</comment>
+  </data>
+  <data name="HW_rate" xml:space="preserve">
+    <value>Please rate and push Button for next item</value>
+    <comment>Message after playing with Hardware Slider (End Rating)</comment>
+  </data>
+  <data name="HW_rateAuto" xml:space="preserve">
+    <value>Push Button for next item</value>
+    <comment>Message after showing a Messagebox (Hardware Slider)</comment>
+  </data>
+  <data name="HW_start" xml:space="preserve">
+    <value>Push button to start</value>
+    <comment>First Message (Hardware Slider)</comment>
+  </data>
+  <data name="HWconst_proceed" xml:space="preserve">
+    <value>Push button to proceed</value>
+    <comment>Message after playing with Hardware Slider (Continuous Rating)</comment>
+  </data>
+  <data name="LocalPlayerNotFound" xml:space="preserve">
+    <value>Video Player executable not found</value>
+    <comment>Message that the video application specified was not found </comment>
+  </data>
+  <data name="LOG_EvalAbort" xml:space="preserve">
+    <value>Evaluation aborted</value>
+    <comment>Logfile message when AVrate was terminated</comment>
+  </data>
+  <data name="MSG_checkset" xml:space="preserve">
+    <value>Some settings could not be read properly.
+Please check settings file for these values :
+
+</value>
+    <comment>Settings file has missing or false entries</comment>
+  </data>
+  <data name="MSG_noMoreItems" xml:space="preserve">
+    <value>No more items</value>
+    <comment>Shown after the last item (Constant Method)(disabled)</comment>
+  </data>
+  <data name="MSGITEM_header" xml:space="preserve">
+    <value>Notification</value>
+    <comment>Window title for Special Playlist Item Message Boxes</comment>
+  </data>
+  <data name="MSGITEM_pe" xml:space="preserve">
+    <value>Thank you!
+
+This part of the test was successfully accomplished.</value>
+    <comment>Special Playlist Item : End of evaluation</comment>
+  </data>
+  <data name="MSGITEM_pp" xml:space="preserve">
+    <value>Please take a break.</value>
+    <comment>Special Playlist Item : Pause</comment>
+  </data>
+  <data name="MSGITEM_te" xml:space="preserve">
+    <value>End of training phase.</value>
+    <comment>Special Playlist Item : End of training phase</comment>
+  </data>
+  <data name="MSGITEM_ts" xml:space="preserve">
+    <value>Training phase begins.</value>
+    <comment>Special Playlist Item : Begin of training phase</comment>
+  </data>
+  <data name="MSGITEM_waitframe" xml:space="preserve">
+    <value>Test supervisor should handle this.
+Reason : WaitFrameVS</value>
+    <comment>Special Playlist Item : Waitframe</comment>
+  </data>
+  <data name="NumberTestPersons" xml:space="preserve">
+    <value>Number of test persons</value>
+    <comment>Main window : Label for number of test persons</comment>
+  </data>
+  <data name="PlaylistErrorHeader" xml:space="preserve">
+    <value>Playlist Error</value>
+    <comment>Window title for errors in playlist</comment>
+  </data>
+  <data name="PlaylistFilesNotFound" xml:space="preserve">
+    <value>The following files in the playlist could not be found :</value>
+    <comment>Playlist entries can not be found</comment>
+  </data>
+  <data name="PlaylistFilesMisssing" xml:space="preserve">
+    <value>In the case of SAMVIQ it is supposed to have always the same number of video compared one to each others</value>
+    <comment>Playlist entries missing</comment>
+  </data>
+  <data name="PlaylistMissingEntries" xml:space="preserve">
+    <value>Entries are missing</value>
+    <comment>(disabled)</comment>
+  </data>
+  <data name="PlaylistNotFound" xml:space="preserve">
+    <value>Playlist file could not be found</value>
+    <comment>Playlist file can not be found</comment>
+  </data>
+  <data name="QuitQuestionHeader" xml:space="preserve">
+    <value>Exit Application</value>
+    <comment>Window title when 'exit' was typed in</comment>
+  </data>
+  <data name="QuitQuestionMessage" xml:space="preserve">
+    <value>Really Quit ?</value>
+    <comment>Message when 'exit' was typed in</comment>
+  </data>
+  <data name="RESULT_ALLITEMSPLAYED" xml:space="preserve">
+    <value>Playlist finished</value>
+    <comment>Logfile Message : All items were played (Standard/Constant method)</comment>
+  </data>
+  <data name="RESULT_BEGINOFPLAYLIST" xml:space="preserve">
+    <value>CODE -1 Begin of playlist</value>
+    <comment>Logfile Message : Wrong counting in playlist. Internal Error, should never come up.</comment>
+  </data>
+  <data name="RESULT_MAXEXCEEDED" xml:space="preserve">
+    <value>Maximum border of playlist exceeded</value>
+    <comment>Logfile Message : The end of a Staircase/Double playlist was exceeded a given number of times.</comment>
+  </data>
+  <data name="RESULT_MAXNUMTURNS" xml:space="preserve">
+    <value>Maximum number of reversals reached</value>
+    <comment>Logfile Message : The targeted number of reversals is reached (Staircase/Double)</comment>
+  </data>
+  <data name="RESULT_MINEXCEEDED" xml:space="preserve">
+    <value>Minimum border of playlist exceeded</value>
+    <comment>Logfile Message : The begin of a Staircase/Double playlist was exceeded a given number of times.</comment>
+  </data>
+  <data name="SetCombiNotSupported" xml:space="preserve">
+    <value>Settings file : Settings entry combination not supported</value>
+    <comment>Settings file has non-operational settings combination</comment>
+  </data>
+  <data name="SettingsMissingEntries" xml:space="preserve">
+    <value>Settings file : Entries are missing</value>
+    <comment>Settings file has missing entries</comment>
+  </data>
+  <data name="SettingsNotFound" xml:space="preserve">
+    <value>Settings file could not be found</value>
+    <comment>Settings file could not be found</comment>
+  </data>
+  <data name="VOL_louder" xml:space="preserve">
+    <value>Louder</value>
+    <comment>Volume slider label : Louder</comment>
+  </data>
+  <data name="VOL_normal" xml:space="preserve">
+    <value>Normal</value>
+    <comment>Volume slider label : Normal volume</comment>
+  </data>
+  <data name="VOL_set" xml:space="preserve">
+    <value>Set Volume</value>
+    <comment>Volume slider label : ? not checked</comment>
+  </data>
+  <data name="VOL_softer" xml:space="preserve">
+    <value>Softer</value>
+    <comment>Volume slider label : Softer</comment>
+  </data>
+</root>
