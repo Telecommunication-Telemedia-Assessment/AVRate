@@ -62,10 +62,9 @@ remotehost = {<ip:port>}
 repeat = {true, false}
 	possibility to repeat a playlist item (how should it be done for hardware slider rating?)
 
-localplayer = {wmp, mplayer, vlc09, vlc10, command_line}
+localplayer = {wmp, mplayer, vlc10, command_line}
 	Available video players:
 	Windows Media Player (as ActiveX Control)
-	VLC Player V0.9.8a
 	VLC Player V1.0.0RC1
 	MPlayer V1.0rc2
 	Run an arbitrary command line
@@ -140,10 +139,10 @@ The script "PlaybackEnd.vbs" will be called after then end of the video.
 	
 	<remotehost>192.168.0.1:42219</remotehost>
 
-	<!--	
-	<localplayer>vlc</localplayer>
+		
+	<localplayer>vlc10</localplayer>
 	<playerpath>C:\Programme\VideoLAN\VLC</playerpath>	
-	-->
+	
 
 	<!--
 	<localplayer>pcplayer</localplayer>
@@ -159,10 +158,11 @@ The script "PlaybackEnd.vbs" will be called after then end of the video.
 	<playerpath>doesntmatter</playerpath>
 	-->
 
+	<!--
 	<localplayer>command_line</localplayer>
 	<playerpath>C:\Program Files\VideoLAN\VLC\vlc.exe</playerpath>
 	<playerarguments> %1 -f </playerarguments>
-	
+	-->
 
 </general>
 <!--
@@ -187,7 +187,7 @@ The script "PlaybackEnd.vbs" will be called after then end of the video.
 </slider>
 -->
 <slider>
-	<name>slider2</name>
+	<name>This is a first question</name>
 	<label></label>
 	<label>lowest</label>
 	<label></label>
