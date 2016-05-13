@@ -4,9 +4,6 @@ AVRate is a program which allows people to view video and listen to audio data a
 
 Before the actual use, configuration has to be done in three parts, a main XML configuration file, a playlist containing the data that is to be played and some settings right before the test regarding the test subjects.
 
-When using the hardware slider at a local display, the player should be mplayer.
-
-
 
 # Acknowledgment
 
