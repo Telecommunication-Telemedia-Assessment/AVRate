@@ -195,7 +195,9 @@ Available audio players:
 
 ### playerpath = complete path to the executable of localplayer
 
-### playerarguments = the arguments to pass to the player in case the selected local player is "command_line". In the arguments, %1 is a placeholder for the file to play according to the playlist. Ex. -i %1 --fullscreen
+### playerarguments = the arguments to pass to the player.
+
+This is valid in case the selected local player is "command_line". In the arguments, %1 is a placeholder for the file to play according to the playlist. Ex. -input-video %1 --fullscreen
 
 ### volumeform = { none, slider, button }
 
