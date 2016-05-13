@@ -1,7 +1,7 @@
-SliderTool
+AVRate
 ----------
 
-SliderTool is a program which allows people to view video and listen to audio data and then rate the seen content by different means of software and hardware inputs. Software inputs can be sliders, which position can be changed with the mouse or buttons which can be clicked. Hardware input is an external slider attached over USB.
+AVRate is a program which allows people to view video and listen to audio data and then rate the seen content by different means of software and hardware inputs. Software inputs can be sliders, which position can be changed with the mouse or buttons which can be clicked. Hardware input is an external slider attached over USB.
 
 Before the actual use, configuration has to be done in three parts, a main XML configuration file, a playlist containing the data that is to be played and some settings right before the test regarding the test subjects.
 
