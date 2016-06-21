@@ -138,6 +138,10 @@
     <value>Server entries must have 4 values or multiples of 4</value>
     <comment>Playlist file contains bad formatted server entries (Several Rating)</comment>
   </data>
+  <data name="ERR_unknownPlayer" xml:space="preserve">
+    <value>An unknown player was specified in the settings file: </value>
+    <comment>The player should strictly be one of the option described in the manual.</comment>
+  </data>
   <data name="FillTextbox" xml:space="preserve">
     <value>Please fill out the text box</value>
     <comment>Main window : settings or playlist file not specified</comment>
@@ -235,6 +239,10 @@ Reason : WaitFrameVS</value>
   <data name="PlaylistNotFound" xml:space="preserve">
     <value>Playlist file could not be found</value>
     <comment>Playlist file can not be found</comment>
+  </data>
+  <data name="PlayerErrorHeader" xml:space="preserve">
+    <value>Player Error</value>
+    <comment>The selected player is not recognized as one of the pre-defined players.</comment>
   </data>
   <data name="QuitQuestionHeader" xml:space="preserve">
     <value>Exit Application</value>

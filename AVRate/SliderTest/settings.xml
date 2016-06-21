@@ -141,7 +141,7 @@ The script "PlaybackEnd.vbs" will be called after then end of the video.
 
 		
 	<localplayer>vlc10</localplayer>
-	<playerpath>C:\Programme\VideoLAN\VLC</playerpath>	
+	<playerpath>C:\Programme\VideoLAN\VLC\vlc.exe</playerpath>	
 	
 
 	<!--

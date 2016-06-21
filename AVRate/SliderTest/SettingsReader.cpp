@@ -5,6 +5,7 @@ using namespace System::Collections::Generic;
 using namespace System::Xml;
 using namespace System;
 using namespace SliderTest;
+using namespace System::Windows::Forms;
 
 
 SettingsReader::SettingsReader(String^ file) {
@@ -326,6 +327,8 @@ SliderTest::GeneralSettings^ SettingsReader::ReadGeneralSettings() {
 				generalSettings->localPlayer = LocalPlayer::COMMAND_LINE;
 			else
 			{
+				System::Resources::ResourceManager ^resman = gcnew System::Resources::ResourceManager("SliderTest.UImsg",System::Reflection::Assembly::GetExecutingAssembly());
+				MessageBox::Show( resman->GetString("ERR_unknownPlayer",generalSettings->systemculture) + kv->value->ToLower(), resman->GetString("PlayerErrorHeader",generalSettings->systemculture),MessageBoxButtons::OK, MessageBoxIcon::Error);
 				bitSet = bitSet & ~SettingTypes::LocalPlayer;
 			}
 		}
