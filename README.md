@@ -8,6 +8,7 @@ Before the actual use, configuration has to be done in three parts, a main XML c
 # Citation
 
 Please cite the following paper in your reference if you use this tool for your work:
+
 P. Lebreton, M.-N. Garcia and A. Raake (2016). AVRate: An Open Source Modular Audio/Visual Subjective Evaluation Test Interface, 8th International Workshop on Quality of Multimedia Experience (QoMEX).
 
 
