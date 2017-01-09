@@ -55,10 +55,10 @@ Appearance issues:
 Run `AVrate.exe` to start or use it as a command line tool (see also section `Command Line Usage`).
 
 Using AVrate proceeds in three configuration steps:
+
 -	configuring the main XML settings file (see sections `Settings Overview` and `Settings Details`)
 -	Generating a playlist file containing information about the data that is to be played (see section `Playlist`)
--	Providing some user data and paths to files on AVrate`s start screen.
-
+-	Providing some user data and paths to files on AVrate's start screen.
 
 ## Hidden keys - Special commands
 
@@ -173,7 +173,7 @@ currently not used. Audio playback is handled by Windows Media Player (internall
 
 - server: AVrate runs locally while the video plays back on a DVS Pronto HD.2 system. Specify Pronto Server IP and port in the `remotehost` setting.
 
-### remotehost = {<ip:port>}
+### remotehost = {`<ip:port>`}
 
 ### repeat = {true, false}
 
@@ -215,11 +215,11 @@ Language for supervisor
 
 for every needed logging mechanism, add one logging entry (if you want no logging, don't add any)
 
-### waittime = <float>
+### waittime = `<float>`
 
 Time in secs to wait between items, when there is more than 1 user and hardware sliders are being used
 
-### samplinginterval = <int>
+### samplinginterval = `<int>`
 
 Interval between two sampling points for continuous rating (in ms) -> sampling frequency = 1 / samplinginterval
 
@@ -309,6 +309,11 @@ The `Rating Histogram` paragraph shows the number of YES-answers over the number
 
 The `Additional Results` paragraph gives a summary of the items that caused a reversal of rating direction within Staircase or Double Methods, logged, in chronological playing order.
 
+## Converting logs to CSV
+
+The log files can be converted to [tidy](http://vita.had.co.nz/papers/tidy-data.pdf) CSV files using the `convert-avrate-logs.py` script. The output file will contain one line per rating, with additional columns for subject IDs, file names, and rating times. The script requires a Python installation. For example:
+    
+    convert-avrate-logs.py -i /path/to/logs/* -o output.csv
 
 # Acknowledgment
 
