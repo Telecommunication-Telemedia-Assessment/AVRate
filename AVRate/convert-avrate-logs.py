@@ -5,7 +5,7 @@ convert-avrate-logs.py
 
 Author:   Werner Robitza
 Synopsis: Converts AVRate logs into tidy data format.
-Requirements: Python and d
+Requirements: Python 2.x
 Usage:    convert-avrate-logs.py -h
 '''
 
@@ -47,7 +47,6 @@ def write_data(data, file_path, force=False, header=False):
             writer.writeheader()
         for line in data:
             writer.writerow(line)
-
 
 def parse_file(input_file):
     '''
